@@ -1,17 +1,23 @@
-public class Vertex {
-    private int id;
+import java.util.Map;
+public class Vertex<V> {
+    private V data;
 
-    public Vertex(int id) {
-        this.id = id;
+    private Map<Vertex<V>, Double> adjacentVertices;
+
+    public V getData() {
+        return data;
     }
 
-    public int getId() {
-        return id;
+    public void addAdjacentVertex(Vertex<V> destination, double weight) {
+        adjacentVertices.put(destination, weight);
     }
 
-    @Override
+    public Map<Vertex<V>, Double> getAdjacentVertices() {
+        return adjacentVertices;
+    }
+
     public String toString() {
-        return String.valueOf(id);
+        return String.valueOf(data);
     }
 
 }
