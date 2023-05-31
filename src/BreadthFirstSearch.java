@@ -8,6 +8,24 @@ public class BreadthFirstSearch<Vertex> extends Search<Vertex> {
         super(graph);
     }
 
+    public List<Vertex> findShortestPath(Vertex source, Vertex destination) {
+        parentMap = new HashMap<>();
+
+        if (!pathExist(source, destination)) {
+            return null;
+        }
+
+        List<Vertex> path = new ArrayList<>();
+        Vertex current = destination;
+        while (!current.equals(source)) {
+            path.add(0, current);
+            current = parentMap.get(current);
+        }
+        path.add(0, source);
+
+        return path;
+    }
+
     @Override
     public boolean pathExist(Vertex source, Vertex destination) {
         Set<Vertex> visited = new HashSet<>();

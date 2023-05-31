@@ -5,6 +5,9 @@ public class Search<Vertex> {
     public Search(WeightedGraph<Vertex> graph) {
         this.graph = graph;
     }
+    public WeightedGraph<Vertex> getGraph(){
+        return graph;
+    }
 
     public boolean pathExist(Vertex source, Vertex destination) {
         Set<Vertex> visited = new HashSet<>();
