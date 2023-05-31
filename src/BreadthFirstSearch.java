@@ -6,6 +6,7 @@ public class BreadthFirstSearch<Vertex> extends Search<Vertex> {
 
     public BreadthFirstSearch(WeightedGraph<Vertex> graph) {
         super(graph);
+        parentMap = new HashMap<>();
     }
 
     public List<Vertex> findShortestPath(Vertex source, Vertex destination) {
